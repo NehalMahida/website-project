@@ -1,15 +1,76 @@
-<html>
-	<body>
-		<form action="" id="loginPg">
-			<label for="userNa">UserName : </label>
-			<input type="text" placeholder="UserName" id="userNa"><br><br>
-            <label for="MoNum">Mobile Number : </label>
-			<input type="number" id="MoNum" placeholder="Ex : 9865327541">
-            <label for="MoNum">Semester : </label>
-			<input type="number" id="MoNum" placeholder="Ex : 9865327541">
-            <input type="password" placeholder="PassWord"><br><br>
-			<input type="button" value="   SignIn   "><br><br>
-			<h2><a href="registration.html" id="RegLink">Create New Account</a></h2>
-		</form>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration</title>
+	<link rel="stylesheet" href="..//css//bootstrap.css">
+	<script src="..//js//bootstrap.js"></script>
+	<script src="..//js//jquery.js"></script>	
+	<style>
+		input{
+			margin-bottom: 10px;
+		}
+		body{
+			background-image: url("..//images//back.png");
+			height: 100%;
+			background-position: center;
+            background-repeat: no-repeat;
+/*            background-size: cover;*/
+		}
+		.container{
+			position: fixed;
+			align-content: center;
+			margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+			left: 0;
+			right: 0;
+		}		
+		div{
+			margin: 0%;
+		}
+		header{
+			background-color: #00c292;
+			margin: 0px;
+			color: white;
+		}
+		footer{
+			background-color: #00c292;
+
+			position: fixed;
+  			left: 0;
+  			bottom: 0;
+  			width: 100%;
+  			color: white;
+  			text-align: center;
+		}
+		#s1{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body bgcolor="black">
+	<header>
+		<h1 align="center">Registration Form</h1>
+	</header>
+	<nav></nav>
+	<div class="container">
+	<div align="center" class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-body">
+ 		<form action="" name="RegistrationForm" class="alert alert-primary" >
+		<input type="text" placeholder="Name" required="true"><br>
+		<input type="text" placeholder="Username" required="true"><br>
+		<input type="text" placeholder="Password" required="true"><br>
+		<input type="text" placeholder="Password" required="true"><br>
+		<input type="submit" value="Sign Up" >
+		<input type="reset" value="Cancel"><br>
+		</form>				
+			</div>
+		</div>
+
+	</div>		
+	</div>
+	<footer>
+		<p align="center"><b>Developed By: Nehal & Jaydip</b> </p>
+	</footer>
+</body>
 </html>

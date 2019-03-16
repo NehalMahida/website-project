@@ -1,10 +1,116 @@
-<html>
-	<body>
-		<form action="" id="loginPg">
-			<input type="text" placeholder="UserName"><br><br>
-			<input type="password" placeholder="PassWord"><br><br>
-			<input type="button" value="   SignIn   "><br><br>
-			<h2><a href="registration.html" id="RegLink">Create New Account</a></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>www.SIMS.com</title>
+	<link rel="stylesheet" href="..//css//bootstrap.css">
+	<script src="..//js//bootstrap.js"></script>
+	<script src="..//js//jquery.js"></script>
+	<style>
+		body{
+			/*background-image: linear-gradient(red, yellow);*/
+			height: 100%;
+			background-position: center;
+            background-repeat: no-repeat;
+/*          background-size: cover;*/
+		}
+		.container{
+			position: fixed;
+			align-content: center;
+			margin: 10% auto;
+			left: 0;
+			right: 0;
+			border-radius: 50px;
+		}
+		.card-body{
+
+
+		}
+		.card{
+			border-radius: 25px;
+			box-shadow: 2px 3px 5px rgb(128,128,128);
+		}
+		div{
+			margin: 0px;
+		}
+		header{
+			background-color: #00c292;
+			margin: 0px;
+
+		}
+		footer{
+			background-color: #00c292;
+			position: fixed;
+  			left: 0;
+  			bottom: 0;
+  			width: 100%;
+  			color: white;
+  			text-align: center;
+		}
+		.card-header{
+
+		}
+		#s1{
+			text-decoration: none;
+		}
+		input{
+			margin-bottom: 10px;
+		}
+		.user_box{
+			background-image: url("username.png");		
+		}
+		#lgn_txt{
+			font-size: 30px;
+		}
+  a{
+   text-decoration:none;
+   color:blue;
+padding:6px;
+   }
+   a:hover{
+   color:black;
+   background-color: white;
+   border-radius: 10px;
+   }
+   li{
+   font-size:20px;
+   margin-right:10px;
+   padding:6px;
+   border-radius:20px;
+   }
+	</style>
+</head>
+<body>
+	<header>
+	  <ul type="none">
+      <li style="float: left;"><a href="#">Home</a></li>	
+	  <li style="float: left;"><a href="#">Gallery</a></li>
+	  <li style="float: left;"><a href="#">Files</a></li>
+	  <li><a href="#">About Me</a></li>
+      </ul>	 
+	</header>
+	<nav></nav>
+	<div class="container">
+	<div align="center" class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<span id="lgn_txt">Login</span>
+			</div>
+			<div class="card-body">
+				<form action="" name="LoginForm" class="alert alert-primary">
+		        <input type="text" id="user_box" placeholder="Username" required="true" class="fadeIn first"><br>
+		        <input type="text" id="pass_box" placeholder="Password" required="true"><br>
+		        <input class="btn btn-primary" type="submit" value="Login">
+		        <input type="reset" value="Cancel" class="btn btn-primary"><br>
+		        <span id="s1"><a href="registration.html" class="underlineHover">Create New Account</a></span>
 		</form>
-	</body>
+			</div>
+		</div>
+
+	</div>		
+	</div>
+	<footer>
+		<p align="center"><b>Developed By: Nehal & Jaydip</b> </p>
+	</footer>
+</body>
 </html>
