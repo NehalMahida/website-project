@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>www.SIMS.com</title>
-	<link rel="stylesheet" href="..//css//bootstrap.css">
-	<script src="..//js//bootstrap.js"></script>
-	<script src="..//js//jquery.js"></script>
+	<link rel="stylesheet" href="css//bootstrap.css">
+	<script src="js//bootstrap.js"></script>
+	<script src="js//jquery.js"></script>
+	
 	<style>
 		body{
 			/*background-image: linear-gradient(red, yellow);*/
@@ -78,10 +79,15 @@ padding:6px;
    padding:6px;
    border-radius:20px;
    }
+   .red{
+      color: red;
+   }
 	</style>
 </head>
 <body>
 	<header>
+		
+		
 	  <ul type="none">
       <li style="float: left;"><a href="#">Home</a></li>	
 	  <li style="float: left;"><a href="#">Gallery</a></li>
@@ -97,16 +103,17 @@ padding:6px;
 				<span id="lgn_txt">Login</span>
 			</div>
 			<div class="card-body">
-				<form action="login.php" name="LoginForm" id="form1" class="alert alert-primary">
-		        <input type="text" id="user_box" placeholder="Username" required="true" class="fadeIn first" name="rollno"><br>
-		        <input type="text" id="pass_box" placeholder="Password" required="true" name="passwd"><br>
+				<form action="" name="LoginForm" id="form1" class="alert alert-primary">
+		        <input type="text" id="user_box" placeholder="Username" required="true" class="fadeIn first" name=""><br>
+		        <input type="text" id="pass_box" placeholder="Password" required="true" name=""><br>
 		        <input class="btn btn-primary" type="submit" value="Login" id="BtnSub">
 		        <input type="reset" value="Cancel" class="btn btn-primary"><br>
+		        <p id="result" class="red"></p>
 		        <span id="s1"><a href="registration.html" class="underlineHover">Create New Account</a></span>
 		</form>
 			</div>
 		</div>
-		<p id="result"></p>
+		
 
 	</div>		
 	</div>
@@ -114,13 +121,32 @@ padding:6px;
 		<p align="center"><b>Developed By: Nehal & Jaydip</b> </p>
 	</footer>
 	<script type="text/javascript">
+		// $("#form1").attr("action")
+		$(document).ready(function(){
 		$("#BtnSub").click(function(){
-			var data = $("#form1 : input").serializeArray();
-			$.post($("#form1").attr("action"),data,function(message){
+			/* var rollno  =  $('user_box').val();
+			 var passwd = $('pass_box').val();
+			 var dat = $("#form1:input").serializeArray();
+            $.ajax({
+            	url:"login.php",
+            	method:"POST",
+            	data:dat,
+            	success:function(message){
+            	$("#result").html(message);	
+            	}
+            }); */
+
+			//var data = $("#form1:input").serializeArray();
+			var rol  =  $('#user_box').val();
+            var pass = $('#pass_box').val();
+             //  $("#result2").html(rol + pass);
+			
+			$.post("login.php",{rollno :rol,passwd : pass},function(message){
                $("#result").html(message);
 			});
 		});
-		$("form1").submit(function(){
+	});
+		$("#form1").submit(function(){
 			return false;
 		});
 	</script>

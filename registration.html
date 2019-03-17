@@ -1,0 +1,106 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration</title>
+	<link rel="stylesheet" href="css//bootstrap.css">
+	<script src="js//bootstrap.js"></script>
+	<script src="js//jquery.js"></script>	
+	<style>
+		input{
+			margin-bottom: 10px;
+		}
+		body{
+			background-image: url("images//back.png");
+			height: 100%;
+			background-position: center;
+            background-repeat: no-repeat;
+/*            background-size: cover;*/
+		}
+		.container{
+			position: fixed;
+			align-content: center;
+			margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+			left: 0;
+			right: 0;
+		}		
+		div{
+			margin: 0%;
+		}
+		header{
+			background-color: #00c292;
+			margin: 0px;
+			color: white;
+		}
+		footer{
+			background-color: #00c292;
+
+			position: fixed;
+  			left: 0;
+  			bottom: 0;
+  			width: 100%;
+  			color: white;
+  			text-align: center;
+		}
+		#s1{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body bgcolor="black">
+	<header>
+		<h1 align="center">Registration Form</h1>
+	</header>
+
+	<nav></nav>
+	<div class="container">
+	<div align="center" class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-body">
+ 		<form action="regi.php" name="RegistrationForm" id="form2" class="alert alert-primary" method="post">
+		<input type="text" placeholder="RollNumber" required="true" name="roll" id="user_box"><br>
+		<input type="text" placeholder="Password" required="true" name="pass" id="pass_box"><br>
+		<input type="text" placeholder="Conform Password" required="true"><br>
+		<input type="submit" value="Next" id="btn2">
+		<input type="reset" value="Cancel"><br><br>
+		<p id="result" class="red"></p>
+		</form>				
+			</div>
+		</div>
+
+	</div>		
+	</div>
+	<script type="text/javascript"> 
+	
+      $(document).ready(function(){
+		$("#btn2").click(function(){
+			/* var rollno  =  $('user_box').val();
+			 var passwd = $('pass_box').val();
+			 var dat = $("#form1:input").serializeArray();
+            $.ajax({
+            	url:"login.php",
+            	method:"POST",
+            	data:dat,
+            	success:function(message){
+            	$("#result").html(message);	
+            	}
+            }); */
+
+			//var data = $("#form2:input").serializeArray();
+			var rol  =  $('#user_box').val();
+            var pass = $('#pass_box').val();
+             //  $("#result2").html(rol + pass);
+						$.post("regi.php", {roll : rol , pass : pass},function(message){
+               $("#result").html(message);
+			});
+		});
+	});
+		$("#form2").submit(function(){
+			return false;
+		});
+	</script>
+	<footer>
+		<p align="center"><b>Developed By: Nehal & Jaydip</b> </p>
+	</footer>
+</body>
+</html>

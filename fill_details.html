@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fill Details</title>
+	<style>
+		.red{
+			color: red;
+		}
+	</style>
+	<script src="js//bootstrap.js"></script>
+	<script src="js//jquery.js"></script>	
+	
+</head>
+<body>
+	<form action="fillDetail.php" method="post" id="form3">
+	<fieldset>
+		<legend>Personal Details</legend>
+		<label for="username">User Name<em>*</em></label><input type="text" placeholder="User Name" name="un" id="usnam"><br>
+		<label for="FirstName">First Name<em>*</em></label><input type="text" placeholder="First Name" name="fn" id="finam"><br>
+		<label for="MiddleName">Middle Name<em>*</em></label><input type="text" placeholder="Middle Name" name="mn" id="midnam"><br>
+		<label for="LastName">Last Name<em>*</em></label> <input type="text" placeholder="Last Name" name="ln" id="lasnam"><br>
+		<label for="email">Email Address<em>*</em></label><input type="email" placeholder="e.g. you@hostname.com" name="em" id="emai"><br>
+		<label for="">Mobile no<em>*</em></label><input type="number" maxlength="10" placeholder="e.g. +91 9894432212" name="mo" id="mob"><br>
+        <label for="Address">Address<em>*</em></label><textarea id="" form="form3" cols="30" rows="3" placeholder="Address" name="ad" id="add"></textarea><br>
+        
+        <input type="text"><br>
+
+        <input type="submit" name="" value="Save" id="BtnSub2"><br><br>
+         <p id="result" class="red"></p>
+	</fieldset>
+	<fieldset>
+		<legend>Educational Details</legend>		
+	</fieldset>
+	</form>
+	<script type="text/javascript"> 
+	
+      $(document).ready(function(){
+		$("#BtnSub2").click(function(){
+			
+
+			//var data = $("#form1:input").serializeArray();
+            var first = $('#finam').val();
+            var mid = $('#midnam').val();
+            var last = $('#lasnam').val();
+            var add = $('#add').val();
+            var email = $('#emai').val();
+            var user = $('#usnam').val();
+            var mob = $('#mob').val();
+
+            
+       
+             //  $("#result2").html(rol + pass);
+			
+			$.post("fillDetail.php",{fn:first,mo:mob,mn : mid,ad:add,ln:last,em:email,un:user,},function(message){
+               $("#result").html(message);
+			});
+		});
+	});
+		$("#form3").submit(function(){
+			return false;
+		});
+	</script>
+ 
+
+
+</body>
+</html>
